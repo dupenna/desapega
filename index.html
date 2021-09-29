@@ -132,6 +132,23 @@
       left: calc(50% - 2rem);
     }
 
+    figure {
+      animation-name: example;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes example {
+      from {
+        background-position: top left;
+      }
+
+      to {
+        background-position: bottom right;
+      }
+    }
+
     @media (min-width: 600px) {
       ul.products {
         display: grid;
@@ -146,6 +163,7 @@
         border-radius: 1rem;
         overflow: hidden;
       }
+
       ul.products>li figure::before {
         display: none;
       }
@@ -153,9 +171,11 @@
       ul.products>li .content::before {
         display: none;
       }
+
       ul.products>li .content h2 {
         margin: 1rem;
       }
+
       ul.products>li .content .whatsapp {
         right: 1rem;
       }
