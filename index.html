@@ -8,6 +8,159 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0mm;
+      list-style: none;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body,
+    html {
+      min-height: 100vh;
+      width: 100vw;
+    }
+
+    ul.products {
+      width: 100%;
+    }
+
+    ul.products>li {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul.products>li figure {
+      width: 100%;
+      flex: 1;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+
+    ul.products>li figure::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 4px solid #fff;
+      left: .5rem;
+      top: .5rem;
+    }
+
+    ul.products>li .content {
+      background-color: #EAD518;
+      text-align: center;
+      position: relative;
+      font-size: .8rem;
+    }
+
+    ul.products>li .content::before {
+      content: "";
+      position: absolute;
+      top: -20rem;
+      left: 0;
+      right: 0;
+      height: 20rem;
+      background-image: url(curve.png);
+      background-position: bottom right;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+
+    ul.products>li .content h2 {
+      font-size: 1rem;
+      margin: 1rem;
+      margin-top: .5rem;
+    }
+
+    ul.products>li .content p {
+      background-color: rgba(255, 255, 255, .5);
+      padding: .8rem 1rem;
+    }
+
+    ul.products>li .content .whatsapp {
+      position: absolute;
+      top: -4rem;
+      right: 1.5rem;
+    }
+
+    ul.products>li .content .whatsapp img {
+      width: 3rem;
+    }
+
+    ul.prices {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 1rem;
+    }
+
+    ul.prices li {
+      flex: 1;
+      text-align: center;
+    }
+
+    ul.prices li {
+      font-weight: 600;
+      position: relative;
+    }
+
+    ul.prices li small {
+      display: block;
+      font-weight: 300;
+    }
+
+    ul.prices>li:last-child {
+      background-color: #fff;
+      padding: .3rem .5rem;
+      border-radius: .5rem;
+    }
+
+    ul.prices li:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      border-top: 2px solid red;
+      width: 4rem;
+      transform: rotate(-10deg);
+      transform-origin: 0% 0%;
+      bottom: .1rem;
+      left: calc(50% - 2rem);
+    }
+
+    @media (min-width: 600px) {
+      ul.products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 1rem;
+        margin: 1rem;
+        width: auto;
+      }
+
+      ul.products>li {
+        height: 600px;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      ul.products>li figure::before {
+        display: none;
+      }
+
+      ul.products>li .content::before {
+        display: none;
+      }
+      ul.products>li .content h2 {
+        margin: 1rem;
+      }
+      ul.products>li .content .whatsapp {
+        right: 1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -270,160 +423,6 @@
       element.href = `https://wa.me/5519971080884?text=${text}`;
     });
   </script>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0mm;
-      list-style: none;
-      outline: none;
-      box-sizing: border-box;
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    body,
-    html {
-      min-height: 100vh;
-      width: 100vw;
-    }
-
-    ul.products {
-      width: 100%;
-    }
-
-    ul.products>li {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    ul.products>li figure {
-      width: 100%;
-      flex: 1;
-      background-position: center;
-      background-size: cover;
-      position: relative;
-    }
-
-    ul.products>li figure::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 4px solid #fff;
-      left: .5rem;
-      top: .5rem;
-    }
-
-    ul.products>li .content {
-      background-color: #EAD518;
-      text-align: center;
-      position: relative;
-      font-size: .8rem;
-    }
-
-    ul.products>li .content::before {
-      content: "";
-      position: absolute;
-      top: -20rem;
-      left: 0;
-      right: 0;
-      height: 20rem;
-      background-image: url(curve.png);
-      background-position: bottom right;
-      background-size: 100%;
-      background-repeat: no-repeat;
-    }
-
-    ul.products>li .content h2 {
-      font-size: 1rem;
-      margin: 1rem;
-      margin-top: .5rem;
-    }
-
-    ul.products>li .content p {
-      background-color: rgba(255, 255, 255, .5);
-      padding: .8rem 1rem;
-    }
-
-    ul.products>li .content .whatsapp {
-      position: absolute;
-      top: -4rem;
-      right: 1.5rem;
-    }
-
-    ul.products>li .content .whatsapp img {
-      width: 3rem;
-    }
-
-    ul.prices {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      margin: 1rem;
-    }
-
-    ul.prices li {
-      flex: 1;
-      text-align: center;
-    }
-
-    ul.prices li {
-      font-weight: 600;
-      position: relative;
-    }
-
-    ul.prices li small {
-      display: block;
-      font-weight: 300;
-    }
-
-    ul.prices>li:last-child {
-      background-color: #fff;
-      padding: .3rem .5rem;
-      border-radius: .5rem;
-    }
-
-    ul.prices li:not(:last-child)::before {
-      content: "";
-      position: absolute;
-      border-top: 2px solid red;
-      width: 4rem;
-      transform: rotate(-10deg);
-      transform-origin: 0% 0%;
-      bottom: .1rem;
-      left: calc(50% - 2rem);
-    }
-
-    @media (min-width: 600px) {
-      ul.products {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-        gap: 1rem;
-        margin: 1rem;
-        width: auto;
-      }
-
-      ul.products>li {
-        height: 600px;
-        border-radius: 1rem;
-        overflow: hidden;
-      }
-      ul.products>li figure::before {
-        display: none;
-      }
-
-      ul.products>li .content::before {
-        display: none;
-      }
-      ul.products>li .content h2 {
-        margin: 1rem;
-      }
-      ul.products>li .content .whatsapp {
-        right: 1rem;
-      }
-    }
-  </style>
 
 </body>
 
