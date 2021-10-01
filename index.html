@@ -30,6 +30,7 @@
 
     ul.products>li {
       min-height: 100vh;
+      position: relative;
       display: flex;
       flex-direction: column;
     }
@@ -124,7 +125,7 @@
     ul.prices li:not(:last-child)::before {
       content: "";
       position: absolute;
-      border-top: 2px solid red;
+      border-top: 2px solid #900;
       width: 4rem;
       transform: rotate(-10deg);
       transform-origin: 0% 0%;
@@ -179,6 +180,26 @@
       ul.products>li .content .whatsapp {
         right: 1rem;
       }
+    }
+
+    .sold::after {
+      content: "vendido";
+      position: absolute;
+      top: 2rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 2rem;
+      transform: rotate(-30deg);
+      left: -2.5rem;
+      background-color: #900;
+      color: #fff;
+      width: 300px;
+    }
+    .sold figure, .sold .content {
+      opacity: .5;
+      pointer-events: none;
+      filter: grayscale(100%)  /* Completamente em branco&preto */
+
     }
   </style>
 </head>
@@ -240,7 +261,7 @@
         </ul>
       </div>
     </li>
-    <li>
+    <li class="sold">
       <figure style="background-image: url(products/aparador-madeira.jpeg);"></figure>
       <div class="content">
         <a class="whatsapp" target="_blank"><img src="whatsapp.png"></a>
