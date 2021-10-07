@@ -135,18 +135,27 @@
     }
 
     figure {
-      animation-name: example;
+      animation-name: movingBackground;
+      animation-timing-function: linear;
       animation-duration: 4s;
       animation-iteration-count: infinite;
       animation-direction: alternate;
     }
 
-    @keyframes example {
-      from {
+    @keyframes movingBackground {
+      0% {
+        background-position: center center;
+      }
+
+      33% {
         background-position: top left;
       }
 
-      to {
+      66% {
+        background-position: center center;
+      }
+
+      100% {
         background-position: bottom right;
       }
     }
@@ -207,7 +216,7 @@
       }
 
       ul.products>li:hover figure {
-        animation-name: example;
+        animation-name: movingBackground;
       }
 
       figure {
@@ -234,8 +243,6 @@
       opacity: .5;
       pointer-events: none;
       filter: grayscale(100%)
-        /* Completamente em branco&preto */
-
     }
   </style>
 </head>
